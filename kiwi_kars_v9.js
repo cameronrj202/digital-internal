@@ -8,10 +8,9 @@ var	cars = 0;
 var	checkInDate;
 var	numberDays = 0; //global varibles
 var totalCost = 0;
-var addCost = 0;
 var carPrice = 0;
 var insuranceFee = 0;
-var checkAddItems = 0;
+var checkAddItems = [];
 var bookingFee = 50;
 var firstName, lastName, cellphone, email, age, comments = null;
 
@@ -54,38 +53,60 @@ function updateExtras() {
 	alert("extras");
 	var addItems = document.getElementsByClassName('extras');
 	//this collects all my additional items check boxes and stores them in an object array
-	checkAddItems = []; //empty list to add the selected additional items to
+	//empty list to add the selected additional items to
 	alert("item added");
 	//holds the cost of the checkboxes
+	var addCost= 0;
 	for (var i = 0; i < addItems.length; i++) {
 		if (addItems[i].checked) {
 			checkAddItems.push(' ' + addItems[i].value); //finds the value
 			alert(checkAddItems);
-			addCost += parseInt(addItems[i].dataset.price);
+			addCost += Number(addItems[i].dataset.price);
 			alert(addCost);
-			document.getElementById("extraOutput").innerHTML = checkAddItems;
 			alert("extras done");
 		
 		}
 	
 	}
+	totalCost = addCost + carPrice + bookingFee + insuranceFee;
+	document.getElementById("totalOutput").innerHTML = "$" + totalCost;
+	document.getElementById("extraOutput").innerHTML = checkAddItems;
+
 	
 }
 
 function checkInputs() {
 	alert("in the checkinputs function");
 	firstName = document.getElementById("firstNameInput").value;
+	alert("worked");
 	lastName = document.getElementById("lastNameInput").value;
 	cellphone = document.getElementById("cellphoneInput").value;
 	email = document.getElementById("emailInput").value;
 	age = document.getElementById("ageInput").value;
 	comments = document.getElementById("commentsOutput").value;
 	alert(firstName + lastName + cellphone + email);
+	age = Number(ageInput.value); //storing the age is
+	alert(age); //test alert
+	//conditional statement to check that the number is within a valid range/can party
+	if (isNaN(age) || (age == '')) { //checks that number is not null OR a number
+		 document.getElementById("error_message").innerHTML= "Please enter a valid number";
+		return
+	} else if (age > 130) {
+		 document.getElementById("error_message").innerHTML= "Theres no one older than 130";
+		return
+	} else if (age < 0) {
+		 document.getElementById("error_message").innerHTML= "You can't be that young please enter a valid age";
+		return
+	} else if((age>=18) && (age<130)){ //if your age is between 18 and 130
+		 document.getElementById("error_message").innerHTML= "You are old enough to order a car";
+		return
+	} else if (age<18){
+		 document.getElementById("error_message").innerHTML= "Your to young to order a car";
+		return
+	}
 	
-	totalCost = addCost + carPrice;
 	
 	alert("$50 added for booking fee");
-	document.getElementById("totalOutput").innerHTML = "$" + totalCost;
 	alert("Check inputs finished");
 	
 }
