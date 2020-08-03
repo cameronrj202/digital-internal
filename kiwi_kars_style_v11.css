@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Open+Sans&display=swap');
+header {
+	background-color: #3aafa9;
+	height: 110px;
+	color: #def2f1;
+	font-size: 130%;
+	text-align: right;
+	padding: 30px;
+	font-family: 'Nunito', sans-serif;
+}
+
+
+.box {
+	margin:10px;
+	padding:30px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+	
+}
+
+input[type=text], [type=tel], [type=number], [type=email], [type=date], textarea {
+  width: 97%;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+}
+.logo {
+	float: left;
+	display: inline-block;
+	height: auto;
+	width: 20%;
+}
+.step_1 {
+	text-align: center;
+	font-family: 'Nunito', sans-serif;
+}
+.dates {}
+.cars {
+	width: 70%;
+	height: 20%;
+}
+.main_content {
+/* Float four columns side by side */
+	width: 70%;
+	margin:auto;
+}
+.column {
+	float: left;
+	width: 22%;
+	padding: 0 10px;
+	
+}
+.extraText {
+	font-family: 'Nunito', sans-serif;
+}
+
+.dates{
+	text-align: center;
+	font-family: 'Nunito', sans-serif;
+}
+/* Remove extra left and right margins, due to padding */
+
+.row {
+	margin: 0 -5px;
+	
+}
+/* Clear floats after the columns */
+
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* Responsive columns */
+
+
+/* Style the counter cards */
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	padding: 16px;
+	text-align: center;
+	background-color: #f1f1f1;
+	max-height: 10%;
+
+	
+}
+.cardFont {
+	text-align: left;
+	font-family: 'Open', sans-serif;
+	
+}
+.cardFontHeading{
+	font-family: 'Nunito', sans-serif;
+}
+.cardFontPrice{
+	text-align: left;
+	font-family: 'Open', sans-serif;
+	color: #2b7a78
+}
+table{
+	font-family: 'Nunito', sans-serif;
+}
+
+label{
+	font-family: 'Nunito', sans-serif;
+	padding: 2px;
+}
+
+button{
+	float: right;
+	background-color: #3aafa9;
+	font-family: 'Nunito', sans-serif;
+	color: white;
+	
+	 
+}
+
+footer {
+	background-color: #3aafa9;
+	height: 90px;
+	color: #def2f1;
+	font-size: 200%;
+	text-align: left;
+	padding: 30px;
+	font-family: 'Nunito', sans-serif;
+}
+.details{
+	color: #def2f1;
+	font-size: 50%;
+	font-family: 'Nunito', sans-serif;
+}
+.footerLogo{
+	float: right;
+	display: inline-block;
+	height: auto;
+	width: 10%;
+}
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  transition: all 0.15s ease-out 0s;
+  background: #cbd1d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: '✔';
+  display: inline-block;
+  font-size: 26.66667px;
+  text-align: center;
+  line-height: 40px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+
+@media screen and (max-width: 600px) {
+	.column {
+		width: 100%;
+		display: block;
+		margin-bottom: 20px;
+	}
+}/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
